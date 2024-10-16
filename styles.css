@@ -1,0 +1,102 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Sicherstellen, dass es bei kleinen Bildschirmen umbricht */
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease; /* Sanfter Übergang beim Hover */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+html[dir="rtl"] nav ul {
+    justify-content: flex-end;
+}
+
+/* Für kleinere Bildschirme */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Navigation untereinander */
+        align-items: center; /* Links zentrieren */
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        margin-right: 0; /* Keine Seitenabstände in der mobilen Ansicht */
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+/* Sehr kleine Bildschirme */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Kleinere Schriftgröße für den Titel */
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        text-align: center; /* Sicherstellen, dass Links zentriert sind */
+    }
+
+    nav ul li {
+        margin-bottom: 8px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+/* Sicherstellen, dass Textarea auf allen Geräten richtig skaliert */
+textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
